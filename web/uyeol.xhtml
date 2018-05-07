@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>üye ol</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h:form>
+            
+            
+                <h3>İsim</h3>
+                <h:inputText id="İsimInputText" value="#{atmaca.isim}"/>
+                <h3>Soyisim</h3>
+                <h:inputText id="SoyisimInputText" value="#{atmaca.soyİsim}"/>
+                <h3>Email</h3>
+                <h:inputText id="EmailInputTex" required="true" requiredMessage="Emailniz Geçerli Değil" value="#{atmaca.email}"
+                             validatorMessage="Yanlış Email">
+                    <f:validateRegex pattern="\w+([-+.']\w+)*@(ogr.iu.edu.tr|gmail.com|outlook.com)"/>
+                
+                </h:inputText>
+                <h4>Şifre</h4>
+                <h:inputSecret id="ŞifreInputText" value="#{atmaca.sifre}" validatorMessage="Yanlış Format" >
+                    <f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10})"/>
+                   
+             
+                </h:inputSecret>
+                
+                 <h:commandButton value="gönder"/>
+                
+            
+        </h:form>
+        
+    </body>
+</html>
